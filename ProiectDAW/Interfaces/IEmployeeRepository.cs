@@ -8,5 +8,6 @@ namespace ProiectDAW.Interfaces
 {
     public interface IEmployeeRepository : IGenericRepository<Employee>
     {
+        public Employee GetEmployeeByMail(string mail);
     }
 }

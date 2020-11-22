@@ -12,7 +12,12 @@ namespace ProiectDAW.Repositories
     {
         public EmployeeRepository(Context context) : base(context)
         {
+            
+        }
 
+        public Employee GetEmployeeByMail(string mail)
+        {
+            return _table.Where(x => x.Mail == mail).FirstOrDefault();
         }
     }
 }

@@ -47,6 +47,8 @@ namespace ProiectDAW
             services.AddTransient<IUserService, UserService>();
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            services.AddTransient<IEmployeeService, EmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
