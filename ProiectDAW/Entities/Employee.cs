@@ -17,15 +17,15 @@ namespace ProiectDAW.Entities
 
         public double Salary { get; set; }
 
-        public int DepartmentId { get; set; }
+        public int DepartmentId { get; set; } = 0;
 
-        public Department Department { get; set; }
+        public Department Department { get; set; } = null;
 
-        public int LaptopId { get; set; }
+        public int LaptopId { get; set; } = 0;
 
-        public Laptop Laptop { get; set; }
+        public Laptop Laptop { get; set; } = null;
 
-        public ICollection<EmployeeCourse> EmployeeCourses { get; set; }
+        public ICollection<EmployeeCourse> EmployeeCourses { get; set; } = null;
 
     }
 }

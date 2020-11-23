@@ -13,9 +13,9 @@ namespace ProiectDAW.Services
     {
         private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        public EmployeeService(IEmployeeRepository EmployeeRepository)
         {
-            this._employeeRepository = employeeRepository;
+            this._employeeRepository = EmployeeRepository;
         }
 
         public Employee CreateEmployee(Employee employee)
@@ -42,7 +42,6 @@ namespace ProiectDAW.Services
             _employeeRepository.SaveChanges();
 
             return true;
-
         }
 
         public Employee GetEmployee(int id)

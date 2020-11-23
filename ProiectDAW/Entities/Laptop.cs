@@ -21,6 +21,6 @@ namespace ProiectDAW.Entities
 
         public string OS { get; set; }
 
-        public Employee Employee { get; set; }
+        public Employee Employee { get; set; } = null;
     }
 }

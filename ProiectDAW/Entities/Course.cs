@@ -17,6 +17,6 @@ namespace ProiectDAW.Entities
 
         public DateTime EndDate { get; set; }
 
-        public ICollection<EmployeeCourse> EmployeeCourses { get; set; }
+        public ICollection<EmployeeCourse> EmployeeCourses { get; set; } = null;
     }
 }

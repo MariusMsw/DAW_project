@@ -14,5 +14,10 @@ namespace ProiectDAW.Repositories
         {
 
         }
+
+        public Department GetDepartmentByName(string name)
+        {
+            return _table.Where(x => x.Name == name).FirstOrDefault();
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace ProiectDAW.Interfaces
 {
     public interface ICourseRepository : IGenericRepository<Course>
     {
+       public Course GetCourseByName(string name);
     }
 }

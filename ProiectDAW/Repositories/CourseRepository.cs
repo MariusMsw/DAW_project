@@ -12,7 +12,12 @@ namespace ProiectDAW.Repositories
     {
         public CourseRepository(Context context) : base(context)
         {
+            
+        }
 
+        public Course GetCourseByName(string name)
+        {
+            return _table.Where(x => x.Name == name).FirstOrDefault();
         }
     }
 }

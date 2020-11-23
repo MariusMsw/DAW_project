@@ -8,5 +8,6 @@ namespace ProiectDAW.Interfaces
 {
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
+        public Department GetDepartmentByName(string name);
     }
 }

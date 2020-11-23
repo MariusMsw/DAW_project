@@ -11,12 +11,12 @@ namespace ProiectDAW.Entities
         [Key]
         public int EmployeeCourseId { get; set; }
 
-        public int EmployeeId { get; set; }
+        public int EmployeeId { get; set; } = 0;
 
-        public int CourseId { get; set; }
+        public int CourseId { get; set; } = 0;
 
-        public Employee Employee { get; set; }
+        public Employee Employee { get; set; } = null;
 
-        public Course Course { get; set; }
+        public Course Course { get; set; } = null;
     }
 }

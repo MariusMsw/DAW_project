@@ -13,7 +13,7 @@ namespace ProiectDAW.Entities
 
         public string Name { get; set; }
 
-        public ICollection<Employee> Employees { get; set; }
+        public ICollection<Employee> Employees { get; set; } = null;
 
     }
 }
