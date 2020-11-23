@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProiectDAW.Data;
 using ProiectDAW.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProiectDAW.Repositories
 {

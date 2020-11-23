@@ -34,7 +34,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: api/Employee/5
-        [HttpGet("{id}")]
+        [HttpGet("{EmployeeId}")]
         public ActionResult<Employee> GetEmployee(int EmployeeId)
         {
             Employee Result = _employeeService.GetEmployee(EmployeeId);
@@ -46,7 +46,7 @@ namespace ProiectDAW.Controllers
         }
 
         // PUT: api/Employee/5
-        [HttpPut("{id}")]
+        [HttpPut("{EmployeeId}")]
         public ActionResult<Employee> UpdateEmployee(int EmployeeId, Employee Employee)
         {
            Employee Result =  _employeeService.UpdateEmployee(EmployeeId, Employee);
@@ -70,7 +70,7 @@ namespace ProiectDAW.Controllers
         }
 
         // DELETE: api/Employee/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{EmployeeId}")]
         public ActionResult<bool> DeleteEmployee(int EmployeeId)
         {
             bool Result = _employeeService.DeleteEmployee(EmployeeId);

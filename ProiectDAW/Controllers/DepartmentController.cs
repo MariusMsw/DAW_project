@@ -33,7 +33,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: api/Department/5
-        [HttpGet("{id}")]
+        [HttpGet("{DepartmentId}")]
         public ActionResult<Employee> GetDepartment(int DepartmentId)
         {
             Department Result = _departmentService.GetDepartment(DepartmentId);
@@ -45,7 +45,7 @@ namespace ProiectDAW.Controllers
         }
 
         // PUT: api/Department/5
-        [HttpPut("{id}")]
+        [HttpPut("{DepartmentId}")]
         public ActionResult<Department> UpdateDepartment(int DepartmentId, Department Department)
         {
             Department Result = _departmentService.UpdateDepartment(DepartmentId, Department);
@@ -69,7 +69,7 @@ namespace ProiectDAW.Controllers
         }
 
         // DELETE: api/Department/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{DepartmentId}")]
         public ActionResult<bool> DeleteDepartment(int DepartmentId)
         {
             bool Result = _departmentService.DeleteDepartment(DepartmentId);

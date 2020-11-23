@@ -33,7 +33,7 @@ namespace ProiectDAW.Controllers
         }
 
         // GET: api/Course/5
-        [HttpGet("{id}")]
+        [HttpGet("{CourseId}")]
         public ActionResult<Course> GetCourse(int CourseId)
         {
             Course Result = _courseService.GetCourse(CourseId);
@@ -45,7 +45,7 @@ namespace ProiectDAW.Controllers
         }
 
         // PUT: api/Course/5
-        [HttpPut("{id}")]
+        [HttpPut("{CourseId}")]
         public ActionResult<Course> UpdateCourse(int CourseId, Course Course)
         {
             Course Result = _courseService.UpdateCourse(CourseId, Course);
@@ -69,7 +69,7 @@ namespace ProiectDAW.Controllers
         }
 
         // DELETE: api/Course/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{CourseId}")]
         public ActionResult<bool> DeleteCourse(int CourseId)
         { 
             bool Result = _courseService.DeleteCourse(CourseId);
