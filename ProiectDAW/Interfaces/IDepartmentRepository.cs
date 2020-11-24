@@ -9,5 +9,9 @@ namespace ProiectDAW.Interfaces
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
         public Department GetDepartmentByName(string name);
+
+        public Department GetDepartmentAllDetails(int DepartmentId);
+
+        public List<Department> GetDepartmentsAllDetails();
     }
 }

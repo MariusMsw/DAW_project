@@ -55,6 +55,10 @@ namespace ProiectDAW.Data
             builder.Entity<User>()
                 .HasAlternateKey(x => x.Mail);
 
+            builder.Entity<Employee>()
+                .Property(f => f.EmployeeId)
+                .ValueGeneratedOnAdd();
+
             base.OnModelCreating(builder);
         }
     }

@@ -8,5 +8,8 @@ namespace ProiectDAW.Interfaces
 {
     public interface ILaptopRepository : IGenericRepository<Laptop>
     {
+        public Laptop GetLaptopAllDetails(int LaptopId);
+
+        public List<Laptop> GetLaptopsAllDetails();
     }
 }

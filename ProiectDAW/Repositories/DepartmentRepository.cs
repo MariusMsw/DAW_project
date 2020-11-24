@@ -1,4 +1,5 @@
-﻿using ProiectDAW.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProiectDAW.Data;
 using ProiectDAW.Entities;
 using ProiectDAW.Interfaces;
 using System;
@@ -18,6 +19,20 @@ namespace ProiectDAW.Repositories
         public Department GetDepartmentByName(string name)
         {
             return _table.Where(x => x.Name == name).FirstOrDefault();
+        }
+
+        public Department GetDepartmentAllDetails(int DepartmentId)
+        {
+            return _table.Where(dep => dep.DepartmentId == DepartmentId)
+                .Include(dep => dep.Employees)
+                .ThenInclude(dep => dep.Laptop)
+                .FirstOrDefault();
+        }
+
+        public List<Department> GetDepartmentsAllDetails()
+        {
+            return _table.Include(dep => dep.Employees)
+                .ThenInclude(emp => emp.Laptop).ToList();
         }
     }
 }

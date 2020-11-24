@@ -8,7 +8,7 @@ namespace ProiectDAW.Interfaces
     public interface IGenericRepository<T> where T : class
     {
         List<T> GetAll();
-        void Create(T entity);
+        T Create(T entity);
         void Update(T entity);
         void Delete(T entity);
         void CreateRange(List<T> entities);

@@ -45,12 +45,12 @@ namespace ProiectDAW.Services
 
         public Department GetDepartment(int DepartmentId)
         {
-            return _departmentRepository.FindById(DepartmentId);
+            return _departmentRepository.GetDepartmentAllDetails(DepartmentId);
         }
 
         public List<Department> GetDepartments()
         {
-            return _departmentRepository.GetAll();
+            return _departmentRepository.GetDepartmentsAllDetails();
         }
 
         public Department UpdateDepartment(int DepartmentId, Department Department)

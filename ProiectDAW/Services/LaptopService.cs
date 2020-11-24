@@ -37,12 +37,12 @@ namespace ProiectDAW.Services
 
         public Laptop GetLaptop(int LaptopId)
         {
-            return _laptopRepository.FindById(LaptopId);
+            return _laptopRepository.GetLaptopAllDetails(LaptopId);
         }
 
         public List<Laptop> GetLaptops()
         {
-            return _laptopRepository.GetAll();
+            return _laptopRepository.GetLaptopsAllDetails();
         }
 
         public Laptop UpdateLaptop(int LaptopId, Laptop Laptop)

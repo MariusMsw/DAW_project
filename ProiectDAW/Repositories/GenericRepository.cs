@@ -17,9 +17,10 @@ namespace ProiectDAW.Repositories
             _table = context.Set<T>();
         }
 
-        public void Create(T entity)
+        public T Create(T entity)
         {
             _context.Set<T>().Add(entity);
+            return entity;
         }
 
         public void CreateRange(List<T> entities)

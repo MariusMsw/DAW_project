@@ -1,10 +1,9 @@
-﻿using ProiectDAW.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProiectDAW.Data;
 using ProiectDAW.Entities;
 using ProiectDAW.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProiectDAW.Repositories
 {
@@ -18,6 +17,21 @@ namespace ProiectDAW.Repositories
         public Employee GetEmployeeByMail(string mail)
         {
             return _table.Where(x => x.Mail == mail).FirstOrDefault();
+        }
+
+        public Employee GetEmployeeAllDetails(int EmployeeId)
+        {
+            return _table.Where(emp => emp.EmployeeId == EmployeeId)
+                .Include(emp => emp.Department)
+                .Include(emp => emp.Laptop).FirstOrDefault();
+        }
+
+        public List<Employee> GetEmployeesAllDetails()
+        {
+            return _table
+                .Include(emp => emp.Department)
+                .Include(emp => emp.Laptop)
+                .ToList();
         }
     }
 }

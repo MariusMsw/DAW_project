@@ -12,10 +12,16 @@ namespace ProiectDAW.Services
     public class EmployeeService : IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IDepartmentRepository _departmentRepository;
+        private readonly ILaptopRepository _laptopRepository;
 
-        public EmployeeService(IEmployeeRepository EmployeeRepository)
+        public EmployeeService(IEmployeeRepository EmployeeRepository,
+                                IDepartmentRepository DepartmentRepository,
+                                ILaptopRepository LaptopRepository)
         {
             this._employeeRepository = EmployeeRepository;
+            this._departmentRepository = DepartmentRepository;
+            this._laptopRepository = LaptopRepository;
         }
 
         public Employee CreateEmployee(Employee employee)
@@ -25,8 +31,9 @@ namespace ProiectDAW.Services
                 return null;
             }
 
-            _employeeRepository.Create(employee);
+            employee = _employeeRepository.Create(employee);
             _employeeRepository.SaveChanges();
+
             return employee;
         }
 
@@ -46,12 +53,12 @@ namespace ProiectDAW.Services
 
         public Employee GetEmployee(int id)
         {
-            return _employeeRepository.FindById(id);
+            return _employeeRepository.GetEmployeeAllDetails(id);
         }
 
         public List<Employee> GetEmployees()
         {
-            return _employeeRepository.GetAll();
+            return _employeeRepository.GetEmployeesAllDetails();
         }
 
         public Employee UpdateEmployee(int EmployeeId, Employee employee)
