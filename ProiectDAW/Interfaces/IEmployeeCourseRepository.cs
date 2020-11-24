@@ -8,5 +8,6 @@ namespace ProiectDAW.Interfaces
 {
     public interface IEmployeeCourseRepository : IGenericRepository<EmployeeCourse>
     {
+        public EmployeeCourse GetEmployeeCourseAllDetails(int EmployeeCourseId);
     }
 }

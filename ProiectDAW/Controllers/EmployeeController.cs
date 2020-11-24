@@ -4,12 +4,7 @@ using ProiectDAW.IServices;
 using System.Collections.Generic;
 
 namespace ProiectDAW.Controllers
-{   //TODO
-    /*
-     * asign employee to department
-     * assign laptop to employee
-     * enroll employee in course
-     */
+{
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -81,12 +76,41 @@ namespace ProiectDAW.Controllers
             return NotFound(EmployeeId);
         }
 
-        //TODO
-        /*
-         * asign employee to department
-         * assign laptop to employee
-         * enroll employee in course
-         */
+        // Post: api/Employee/assign-department/1/2
+        [HttpPost("assign-department/{EmployeeId}/{DepartmentId}")]
+        public ActionResult<bool> AssignDepartmentToEmployee(int EmployeeId, int DepartmentId)
+        {
+            bool Result = _employeeService.AssignDepartmentToEmployee(EmployeeId, DepartmentId);
+            if (Result)
+            {
+                return Ok();
+            }
+            return NotFound(EmployeeId);
+        }
+
+        // Post: api/Employee/assign-laptop/1/2
+        [HttpPost("assign-laptop/{EmployeeId}/{LaptopId}")]
+        public ActionResult<bool> AssignLaptopToEmployee(int EmployeeId, int LaptopId)
+        {
+            bool Result = _employeeService.AssignLaptopToEmployee(EmployeeId, LaptopId);
+            if (Result)
+            {
+                return Ok();
+            }
+            return NotFound(EmployeeId);
+        }
+
+        // Post: api/Employee/enroll/1/2
+        [HttpPost("enroll/{EmployeeId}/{CourseId}")]
+        public ActionResult<bool> EnrollEmployeeToCourse(int EmployeeId, int CourseId)
+        {
+            bool Result = _employeeService.EnrollEmployeeToCourse(EmployeeId, CourseId);
+            if (Result)
+            {
+                return Ok();
+            }
+            return NotFound(EmployeeId);
+        }
     }
 }
 

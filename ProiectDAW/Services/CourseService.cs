@@ -45,12 +45,12 @@ namespace ProiectDAW.Services
 
         public Course GetCourse(int CourseId)
         {
-            return _courseRepository.FindById(CourseId);
+            return _courseRepository.GetCourseAllDetails(CourseId);
         }
 
         public List<Course> GetCourses()
         {
-            return _courseRepository.GetAll();
+            return _courseRepository.GetCoursesAllDetails();
         }
 
         public Course UpdateCourse(int CourseId, Course Course)

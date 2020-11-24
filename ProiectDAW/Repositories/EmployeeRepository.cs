@@ -23,7 +23,9 @@ namespace ProiectDAW.Repositories
         {
             return _table.Where(emp => emp.EmployeeId == EmployeeId)
                 .Include(emp => emp.Department)
-                .Include(emp => emp.Laptop).FirstOrDefault();
+                .Include(emp => emp.Laptop)
+                .Include(emp => emp.EmployeeCourses)
+                .ThenInclude(ec => ec.Course).FirstOrDefault();
         }
 
         public List<Employee> GetEmployeesAllDetails()
@@ -31,6 +33,8 @@ namespace ProiectDAW.Repositories
             return _table
                 .Include(emp => emp.Department)
                 .Include(emp => emp.Laptop)
+                .Include(emp => emp.EmployeeCourses)
+                .ThenInclude(ec => ec.Course)
                 .ToList();
         }
     }

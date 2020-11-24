@@ -17,5 +17,9 @@ namespace ProiectDAW.IServices
         public Employee UpdateEmployee(int employeeId, Employee employee);
 
         public bool DeleteEmployee(int id);
+        bool AssignDepartmentToEmployee(int employeeId, int departmentId);
+
+        bool AssignLaptopToEmployee(int EmployeeId, int LaptopId);
+        bool EnrollEmployeeToCourse(int employeeId, int courseId);
     }
 }
