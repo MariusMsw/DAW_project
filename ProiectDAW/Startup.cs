@@ -56,6 +56,16 @@ namespace ProiectDAW
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings
             .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,6 +92,8 @@ namespace ProiectDAW
             app.UseRouting();
 
             app.UseMiddleware<JwtMiddleware>();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

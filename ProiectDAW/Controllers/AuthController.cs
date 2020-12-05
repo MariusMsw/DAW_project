@@ -39,7 +39,13 @@ namespace ProiectDAW.Controllers
         [HttpPost("login")]
         public IActionResult Login(AuthenticationRequest request)
         {
-            return Ok(_userService.Login(request));
+            AuthenticationResponse response =  _userService.Login(request);
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
         [HttpGet("all")]
