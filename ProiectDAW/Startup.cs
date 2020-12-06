@@ -53,12 +53,20 @@ namespace ProiectDAW
             services.AddTransient<IDepartmentService, DepartmentService>();
             services.AddTransient<ILaptopService, LaptopService>();
 
-            services.AddControllers().AddNewtonsoftJson(options =>
-            options.SerializerSettings
-            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddControllers().AddNewtonsoftJson(options => 
+                options.SerializerSettings
+                    .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                });
+
 
             services.AddCors(options =>
             {
+
                 options.AddDefaultPolicy(
                     builder =>
                     {

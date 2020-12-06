@@ -76,10 +76,8 @@ namespace ProiectDAW.Services
                 return null;
             }
 
-            ExistingEmployee.Department = employee.Department;
             ExistingEmployee.DepartmentId = employee.DepartmentId;
             ExistingEmployee.EmployeeCourses = employee.EmployeeCourses;
-            ExistingEmployee.Laptop = employee.Laptop;
             ExistingEmployee.LaptopId = employee.LaptopId;
             ExistingEmployee.Mail = employee.Mail;
             ExistingEmployee.Name = employee.Name;
